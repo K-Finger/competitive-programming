@@ -1,18 +1,8 @@
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int testCases;
-    cin >> testCases;
-    
-    while (testCases--) {
-        int n;
-        cin >> n;
-        
-        for (long long i; i < n; i++) {
-            
-        }
-    }
+int main(){
+    int w;
+    cin >> w;
+    cout << (w > 2 && w % 2 == 0 ? "YES" : "NO") << endl;
 }
