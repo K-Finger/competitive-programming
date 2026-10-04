@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ren:*)",
+      "Bash(powershell.exe -Command \"Rename-Item -Path ''C:\\\\Users\\\\kiera\\\\OneDrive\\\\Desktop\\\\Codeforces'' -NewName ''competitive-programming''\")",
+      "Bash(mkdir:*)"
+    ]
+  }
+}

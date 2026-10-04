@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\kiera\OneDrive\Desktop\Codeforces\build\CMakeFiles\0d19bb9b3a36666bf7659eb5e1bd3fa2\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{68186372-2012-3CC8-BD4C-85C9B74DFA11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

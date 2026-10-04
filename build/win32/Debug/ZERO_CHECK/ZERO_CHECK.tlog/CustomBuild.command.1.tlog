@@ -1,0 +1,10 @@
+^C:\USERS\KIERA\ONEDRIVE\DESKTOP\CODEFORCES\BUILD\CMAKEFILES\0D19BB9B3A36666BF7659EB5E1BD3FA2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kiera/OneDrive/Desktop/Codeforces -BC:/Users/kiera/OneDrive/Desktop/Codeforces/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/kiera/OneDrive/Desktop/Codeforces/build/CodeforcesPractice.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
