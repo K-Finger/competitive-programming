@@ -1,32 +1,48 @@
-
 #include <bits/stdc++.h>
 using namespace std;
-
 using ll = long long;
 
-
 void solve() {
-    vector<ll> num(3);
-    cin >> num[0] >> num[1] >> num[2];
-    
-    sort(num.begin(), num.end());
-    
-    ll initial_range = num[2] - num[0];
-    ll reduced_range = num[1];
-    
-    cout << min(initial_range, reduced_range) << "\n";
+    int n, m, x, y;
+    cin >> n >> m >> x >> y;
+
+    vector<int> a(x);
+    for (int i = 0; i < x; i++) {
+        cin >> a[x];
+    }
+
+    vector<int> b(y);
+    for (int i = 0; i < y; i++) {
+        cin >> b[y];
+    }
+
+    int totalNeeded = n + m - 1;
+    int da = (n - 1);
+    int db = (m - 1);
+
+    int ra = x - 1;
+    int rb = y - 1;
+
+    while (da > 0 && db > 0) {
+        if (da > db) {
+            // select from a
+
+        } else if (da < db) {
+
+        } else {
+            // select lowest one before
+        }
+    }
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int t;
+    
+    int t = 1;
     cin >> t;
 
     while (t--) {
         solve();
     }
-
-    return 0;
 }

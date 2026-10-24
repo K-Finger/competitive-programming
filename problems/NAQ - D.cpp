@@ -4,8 +4,8 @@ using ll = long long;
 using i128 = __int128_t;
 using Point = pair<ll, ll>;
 #define all(x) (x).begin(), (x).end()
-const int dx[4] = {1, -1, 0, 0};
-const int dy[4] = {0, 0, 1, -1};
+const int dx[4] = { 1, -1, 0, 0 };
+const int dy[4] = { 0, 0, 1, -1 };
 bool inBounds(int x, int y, int n, int m) {
     return x >= 0 && x < n && y >= 0 && y < m;
 }
@@ -50,7 +50,7 @@ void solve() {
         int nextI = (i + 1) % n;
 
         while (cross(pts[i], pts[nextI], pts[(j + 1) % n]) >
-               cross(pts[i], pts[nextI], pts[j])) {
+            cross(pts[i], pts[nextI], pts[j])) {
             j = (j + 1) % n;
         }
 
@@ -73,7 +73,7 @@ void solve() {
 
     auto enough = [&](ll cuts) {
         return (i128)4 * cuts * cuts * maxSqDist >= target;
-    };
+        };
 
     while (ans > 1 && enough(ans - 1))
         ans--;
@@ -91,20 +91,20 @@ void solve() {
             int nextI = (i + 1) % n;
 
             while (cross(pts[i], pts[nextI], pts[(j + 1) % n]) >
-                   cross(pts[i], pts[nextI], pts[j])) {
+                cross(pts[i], pts[nextI], pts[j])) {
                 j = (j + 1) % n;
             }
 
             int nextJ = (j + 1) % n;
             vector<pair<int, int>> pairs = {
-                {i, j},
-                {nextI, j}
+                { i, j },
+                { nextI, j }
             };
 
             if (cross(pts[i], pts[nextI], pts[nextJ]) ==
                 cross(pts[i], pts[nextI], pts[j])) {
-                pairs.push_back({i, nextJ});
-                pairs.push_back({nextI, nextJ});
+                pairs.push_back({ i, nextJ });
+                pairs.push_back({ nextI, nextJ });
             }
 
             for (auto [a, b] : pairs) {
@@ -117,7 +117,7 @@ void solve() {
                 if (a > b)
                     swap(a, b);
 
-                diameterCuts.insert({a, b});
+                diameterCuts.insert({ a, b });
             }
         }
 
