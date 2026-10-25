@@ -1,3 +1,25 @@
+-- competitest.nvim spec (lazy.nvim), shared across machines.
+-- Install: symlink/copy to ~/.config/nvim/lua/plugins/competitest.lua
+--   Linux:   ln -s ~/competitive-programming/nvim/competitest.lua ~/.config/nvim/lua/plugins/
+--   Windows: copy to %LOCALAPPDATA%\nvim\lua\plugins\
+
+local is_win = vim.fn.has("win32") == 1
+
+-- First existing repo location wins
+local root
+for _, p in ipairs({
+  "~/competitive-programming",
+  "~/OneDrive/Desktop/competitive-programming",
+  "~/Desktop/competitive-programming",
+}) do
+  local dir = vim.fn.expand(p)
+  if vim.fn.isdirectory(dir) == 1 then
+    root = dir
+    break
+  end
+end
+root = root or vim.fn.expand("~/competitive-programming")
+
 return {
   "xeluxee/competitest.nvim",
   dependencies = "MunifTanjim/nui.nvim",
@@ -7,9 +29,9 @@ return {
       compile_command = {
         cpp = { exec = "g++", args = { "-std=c++20", "-O2", "-Wall", "-Wextra", "$(FNAME)", "-o", "$(FNOEXT)" } },
       },
-      run_command = { cpp = { exec = "./$(FNOEXT)" } },
-      received_problems_path = "$(HOME)/competitive-programming/problems/$(PROBLEM).$(FEXT)",
-      template_file = "$(HOME)/competitive-programming/templates/templates.cpp",
+      run_command = { cpp = { exec = is_win and "$(FNOEXT).exe" or "./$(FNOEXT)" } },
+      received_problems_path = root .. "/problems/$(PROBLEM).$(FEXT)",
+      template_file = root .. "/templates/templates.cpp",
     })
   end,
   keys = {
