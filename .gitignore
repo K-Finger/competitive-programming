@@ -44,9 +44,13 @@ test*.txt
 Thumbs.db
 desktop.ini
 
-# Compiled binaries with no extension (common on Linux)
-problems/[A-Z]*
-!problems/*.cpp
+# Compiled binaries with no extension (common on Linux):
+# ignore everything in problems/ except sources and competitest testcases
+problems/**/*
+!problems/**/
+!problems/**/*.cpp
+!problems/**/*_input[0-9]*.txt
+!problems/**/*_output[0-9]*.txt
 
 # Temporary
 *.tmp
@@ -65,3 +69,6 @@ venv/
 
 # Claude
 .claude/
+
+# Personal notes
+timeline.md

@@ -5,8 +5,8 @@
 local M = {}
 
 -- Config
-local problems_dir = vim.fn.expand("~/OneDrive/Desktop/competitive-programming/problems")
-local template_file = vim.fn.expand("~/OneDrive/Desktop/competitive-programming/templates/templates.cpp")
+local problems_dir = vim.fn.expand("~/competitive-programming/problems")
+local template_file = vim.fn.expand("~/competitive-programming/templates/templates.cpp")
 
 -- Compile and run current file
 function M.compile_run()
@@ -19,12 +19,12 @@ function M.compile_run()
     local cmd
     if vim.fn.filereadable(input) == 1 then
         cmd = string.format(
-            "g++ -std=c++20 -O2 -Wall -o %s/%s.exe %s && %s/%s.exe < %s",
+            "g++ -std=c++20 -O2 -Wall -o %s/%s %s && %s/%s < %s",
             dir, name, file, dir, name, input
         )
     else
         cmd = string.format(
-            "g++ -std=c++20 -O2 -Wall -o %s/%s.exe %s && %s/%s.exe",
+            "g++ -std=c++20 -O2 -Wall -o %s/%s %s && %s/%s",
             dir, name, file, dir, name
         )
     end
@@ -41,15 +41,15 @@ function M.compile_debug()
     local input = dir .. "/input.txt"
 
     local compile = string.format(
-        "g++ -std=c++20 -g -O0 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG -DLOCAL -o %s/%s.exe %s",
+        "g++ -std=c++20 -g -O0 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG -DLOCAL -o %s/%s %s",
         dir, name, file
     )
 
     local run
     if vim.fn.filereadable(input) == 1 then
-        run = string.format("%s/%s.exe < %s", dir, name, input)
+        run = string.format("%s/%s < %s", dir, name, input)
     else
-        run = string.format("%s/%s.exe", dir, name)
+        run = string.format("%s/%s", dir, name)
     end
 
     vim.cmd("split | terminal " .. compile .. " && " .. run)
