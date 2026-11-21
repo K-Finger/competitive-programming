@@ -49,6 +49,7 @@ desktop.ini
 problems/**/*
 !problems/**/
 !problems/**/*.cpp
+!problems/**/*.py
 !problems/**/*_input[0-9]*.txt
 !problems/**/*_output[0-9]*.txt
 

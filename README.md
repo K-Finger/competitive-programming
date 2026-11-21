@@ -1,7 +1,7 @@
 # competitive-programming
 
 - `problems/` — solutions + competitest testcases (`*_input0.txt`, `*_output0.txt`)
-- `templates/templates.cpp` — template for new problems
+- `templates/templates.cpp`, `templates/template.py` — templates for new problems (`<leader>cp` asks C++ or Python)
 - `nvim/competitest.lua` — competitest.nvim plugin spec (`<leader>cp` receives a problem into `problems/`)
 - `run.sh` / `debug.sh` (Linux), `run.ps1` / `debug.ps1` / `run.bat` (Windows)
 
